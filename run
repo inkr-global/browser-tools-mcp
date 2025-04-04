@@ -16,21 +16,26 @@ cd "${FOLDER}" || exit 1
 
 (
   cd "./submodules/browser-tools-mcp/browser-tools-server" || exit 1
-
-  if [[ ! -d "node_modules" ]]; then
+  if [[ ! -d "./node_modules" ]]; then
     npm install >/dev/null
   fi
-
-  npm start >/dev/null
-
-) &
+)
 
 (
   cd "./submodules/browser-tools-mcp/browser-tools-mcp" || exit 1
-
   if [[ ! -d "node_modules" ]]; then
     npm install >/dev/null
   fi
+)
 
+(
+  cd "./submodules/browser-tools-mcp/browser-tools-server" || exit 1
+  npm start >/dev/null
+) &
+
+sleep 2s || sleep 2
+
+(
+  cd "./submodules/browser-tools-mcp/browser-tools-mcp" || exit 1
   npm start
 )
