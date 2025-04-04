@@ -1,0 +1,13 @@
+{
+  "name": "@inkr/browser-tools-mcp",
+  "version": "0.0.1",
+  "files": [
+    "./submodules/browser-tools-mcp/browser-tools-mcp",
+    "./submodules/browser-tools-mcp/browser-tools-server",
+    "./run"
+  ],
+  "bin": "./run",
+  "scripts": {
+    "start": "./run"
+  }
+}
